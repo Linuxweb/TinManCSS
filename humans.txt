@@ -1,0 +1,16 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Selwyn Orren -- Founder -- @linuxwebsa
+
+# THANKS
+
+    getskeleton.com
+    tinmancss.linuxweb.co.za
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3, Normalise.css
+    jQuery, Canvas, Flexslider

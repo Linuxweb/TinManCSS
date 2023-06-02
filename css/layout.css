@@ -1,0 +1,119 @@
+/*
+* Tinman.css | v1.0.0 | MIT | July 4th, 2017
+* Copyright 2023, Selwyn Orren @ Linuxweb
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 04/07/2017
+*/
+
+/* Overides
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* Layout Structure
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* Navigation Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* Sub Navigation Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* Responsive Navigation Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* Contact Form
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* Gallery
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* Image Sliders
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* Carousels
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* Back to Top
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* Cookie Cutter
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Animations
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.heartbeat {
+	-webkit-animation-name: heartbeat;
+	        animation-name: heartbeat;
+	-webkit-animation-duration: 1.5s;
+	        animation-duration: 1.5s;
+	-webkit-animation-iteration-count: infinite;
+	        animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+
+@-webkit-keyframes heartbeat {
+	0% {
+	-webkit-transform: scale(1.1);
+	        transform: scale(1.1); }
+	50% {
+	-webkit-transform: scale(0.8);
+	        transform: scale(0.8); }
+	100% {
+	-webkit-transform: scale(1);
+	        transform: scale(1); }
+}
+
+@keyframes heartbeat {
+	0% {
+	-webkit-transform: scale(1.1);
+	        transform: scale(1.1); }
+	50% {
+	-webkit-transform: scale(0.8);
+	        transform: scale(0.8); }
+	100% {
+	-webkit-transform: scale(1);
+	        transform: scale(1); }
+}
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*
+Note: The best way to structure the use of media queries is to create the queries
+near the relevant code. For example, if you wanted to change the styles for buttons
+on small devices, paste the mobile query code up in the buttons section and style it
+there.
+*/
+
+/*
+The following media queries are calculated using the universal em measurement
+and are geared toward the base grid as setup in the skeleton.css file. As a base its using 16px
+Example
+=============
+30em = 480px
+60em = 960px
+So we are targeting all three core viewpoints for each typical device.
+*/
+
+/* Mobile Devices */
+@media screen and (max-width: 30em) {}
+
+/* Phablet to Desktop */
+@media screen and (min-width: 30.0625em) and (max-width: 60em) {}
+
+/* Desktop to HD Desktop */
+@media screen and (min-width: 60.0625em) {}

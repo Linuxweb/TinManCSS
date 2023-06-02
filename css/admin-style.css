@@ -1,0 +1,514 @@
+/*
+* Tinman.css | v1.0.0 | MIT | July 4th, 2017
+* Copyright 2023, Selwyn Orren @ Linuxweb
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 04/07/2017
+*/
+
+/* Overides
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+label {
+    font-weight:500;
+}
+input, form, p:last-of-type  {
+    margin-bottom: 0;
+}
+body {
+  background: #f7f7f7;
+}
+a {
+  color: #edb644;
+}
+a:hover {
+  color: #D4AB3F;
+}
+.fa-lg {
+  vertical-align: -25%;
+}
+input, textarea, select, fieldset {
+  margin-bottom: 0.25rem;
+}
+input[type="file"] {
+    border: 1px solid #D1D1D1;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+#status {
+  display: none;
+}
+
+/* Layout Structure
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+#loginForm {
+  background: #f7f7f7;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+body.home {
+    background: url('//source.unsplash.com/random?dark-mountains') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+}
+.input-group {
+    display: table;
+    position: relative;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+.input-group i {
+    position: relative;
+    width: 36px;
+    height: 37px;
+    line-height: 37px;
+    background: #ccc;
+    border: 1px solid #ccc;
+    display: table-cell;
+    vertical-align: middle;
+    border-radius: 4px 0px 0px 4px;
+}
+.input-group input {
+    width: 100%;
+    display: table-cell;
+}
+.input-group > input {
+    margin-bottom:0px;
+    border-radius: 0px 4px 4px 0px;
+}
+.social i {
+    margin: 4px 15px 0 5px;
+    min-width: 15px;
+}
+.social {
+    text-align: left;
+}
+.separator {
+    margin: 20px 0px auto;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+.separator i {
+    padding: 0 1rem;
+    background: #f7f7f7;
+    position: relative;
+    top: -0.75rem;
+    z-index: 1;
+}
+.infoText {
+    margin-top:5%;
+}
+    .infoText img {
+        margin-bottom: 1rem;
+    }
+
+#bandContainer {
+  background: #fff;
+  z-index: 99
+}
+  #logo {
+    margin-top: 0.5rem;
+  }
+  #logo img {
+    height: 39px;
+  }
+  .avatar {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 10px;
+    color: #000;
+  }
+
+#mainContainer {
+  position: relative;
+  padding-top: 1rem;
+  min-height: calc(100vh - 213px);
+}
+  #mainContainer h4:not(last-of-type) {
+    margin-bottom: 0;
+  }
+  #mainContainer h5 {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  #mainContainer em {
+    color: #666;
+    font-size: 0.75rem;
+  }
+  #mainContainer input.Title {
+    padding-right: 3rem;
+  }
+  #mainContainer span.counter {
+    position: relative;
+    float: right;
+    top: -2.25rem;
+    right: 1rem;
+    color: #999;
+    font-size: 90%;
+  }
+
+
+.card {
+  background: #fff;
+  -webkit-box-shadow: 0 0 10px #ccc;
+          box-shadow: 0 0 10px #ccc;
+  padding: 1rem;
+}
+  .card h5 {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  .card button {
+    margin: 0.5rem 0 0;
+  }
+  .card label {
+    margin-bottom: 0;
+  }
+
+  .card #password {
+    display: table;
+    position: relative;
+  }
+  .card #password i {
+    position: absolute;
+    right: 0;
+    width: 36px;
+    height: 37px;
+    line-height: 37px;
+    background: #ccc;
+    border: 1px solid #ccc;
+    display: table-cell;
+    vertical-align: middle;
+    border-radius: 0px 4px 4px 0px;
+    text-align: center;
+    opacity: 0.5;
+    z-index: 1;
+  }
+  .card #password i:hover {
+    opacity: 1.0;
+  }
+
+
+
+
+
+
+
+
+#footerContainer {
+  position: static;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #222;
+  color: #fff;
+  margin-top: 3rem;
+}
+  #footerContainer h6 {
+    margin-bottom: initial;
+  }
+  #footerContainer p {
+    margin: 1rem;
+  }
+
+
+/* Navigation Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+#navigation {
+  float: right;
+  text-align: left;
+}
+
+#navigation ul {
+  float: right;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+#navigation li {
+  float: left;
+  position: relative;
+  list-style: none;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+  padding: 14px 16px;
+  color: #333333;
+  margin-bottom: initial;
+}
+
+#navigation li a {
+  display: block;
+  text-decoration: none;
+  color: #333333;
+  text-transform: uppercase;
+  letter-spacing:1px;
+}
+#navigation li a:hover {
+  color: #ffffff;
+}
+#navigation ul ul {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  visibility: hidden;
+  opacity: 0;
+  min-width:180px;
+  z-index: 999;
+}
+#navigation ul ul ul {
+  left: 100%;
+  top: 0;
+}
+#navigation ul ul a {
+  min-width:150px;
+  color:#fff;
+}
+#navigation ul li:hover > a {
+  color: #fff;
+}
+#navigation li:hover, #navigation li:hover li {
+  background: #edb644;
+  color: #fff;
+}
+#navigation li li:hover, #navigation li li:hover li {
+  background: #333;
+}
+#navigation li li li:hover {
+  background: #999;
+}
+#navigation li:hover > ul {
+  visibility: visible;
+  opacity: 1;
+}
+/* #navigation span {
+  display: none;
+} */
+#navigation .current {
+  background: #edb644;
+}
+
+#navigation li.current > a {
+  color: #fff;
+}
+
+/* Admin Navigation Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+#navContainer {
+  background: #333;
+}
+#adminnav {
+  float: left;
+  text-align: left;
+  width: 100%;
+  position: relative;
+}
+
+#adminnav ul {
+  float: left;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+#adminnav li {
+  float: left;
+  position: relative;
+  list-style: none;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+  padding: 14px 16px;
+  color: #333;
+  margin-bottom: initial;
+}
+#adminnav li:last-of-type {
+  margin-right: -16px;
+}
+#adminnav li a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing:1px;
+}
+#adminnav li a:hover {
+  color: #fff;
+}
+#adminnav ul ul {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  visibility: hidden;
+  opacity: 0;
+  min-width:180px;
+  z-index: 999;
+}
+#adminnav ul ul ul {
+  left: 100%;
+  top: 0;
+}
+#adminnav ul ul a {
+  min-width:200px;
+  color:#fff;
+}
+#adminnav ul li:hover > a {
+  color: #fff;
+}
+#adminnav li:hover, #adminnav li:hover li {
+  background: #edb644;
+}
+#adminnav li li:hover, #adminnav li li:hover li {
+  background: #333;
+}
+#adminnav li li li:hover {
+  background: #edb644;
+}
+#adminnav li:hover > ul {
+  visibility: visible;
+  opacity: 1;
+}
+#adminnav span {
+  display: none;
+}
+#adminnav li > a:not(:only-child)::after {
+    content: '\f0d7';
+    font-family: FontAwesome;
+    float: right;
+    margin-left: 10px;
+    font-size: 0.5rem;
+}
+
+/* Sub Navigation Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* Responsive Navigation Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* Contact Form
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* Gallery
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* Image Sliders
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* Carousels
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* Back to Top
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* Cookie Cutter
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Animations
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.heartbeat {
+  -webkit-animation-name: heartbeat;
+          animation-name: heartbeat;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes heartbeat {
+  0% {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1); }
+  50% {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8); }
+  100% {
+  -webkit-transform: scale(1);
+          transform: scale(1); }
+}
+
+@keyframes heartbeat {
+  0% {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1); }
+  50% {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8); }
+  100% {
+  -webkit-transform: scale(1);
+          transform: scale(1); }
+}
+
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*
+Note: The best way to structure the use of media queries is to create the queries
+near the relevant code. For example, if you wanted to change the styles for buttons
+on small devices, paste the mobile query code up in the buttons section and style it
+there.
+*/
+
+/*
+The following media queries are calculated using the universal em measurement
+and are geared toward the base grid as setup in the skeleton.css file. As a base its using 16px
+Example
+=============
+30em = 480px
+75em = 1200px
+So we are targeting all three core viewpoints for each typical device.
+*/
+
+/* Mobile Devices */
+@media screen and (max-width: 30em) {
+    #loginForm {
+        background: #f7f7f7;
+        -webkit-box-shadow:0px 0px 20px 3px #4c4c4c;
+                box-shadow:0px 0px 20px 3px #4c4c4c;
+        padding:1rem;
+        top: initial;
+        left: initial;
+        position: relative;
+        -webkit-transform: none;
+            -ms-transform: none;
+                transform: none;
+    }
+}
+
+/* Phablet Devices */
+@media screen and (min-width: 30.0625em) and (max-width: 47.9375em) {
+    #loginForm {
+        background: #f7f7f7;
+        -webkit-box-shadow:0px 0px 20px 3px #4c4c4c;
+                box-shadow:0px 0px 20px 3px #4c4c4c;
+        padding:1rem;
+        top: initial;
+        left: initial;
+        position: relative;
+        -webkit-transform: none;
+            -ms-transform: none;
+                transform: none;
+    }
+}
+
+/* Desktop to HD Desktop */
+@media screen and (min-width: 75em) {}

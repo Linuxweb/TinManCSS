@@ -1,0 +1,613 @@
+/*
+* Tinman.css | v1.0.0 | MIT | July 4th, 2017
+* Copyright 2023, Selwyn Orren @ Linuxweb
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 04/07/2017
+*/
+
+/* Table of contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Grid
+- Base Styles
+- Typography
+- Links
+- Buttons
+- Forms
+- Lists
+- Code
+- Tables
+- Blockquote
+- Tooltip
+- Spacing
+- Utilities
+- Misc
+*/
+
+
+/* Grid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.container {
+	margin: 0 auto;
+	width: 80%;
+	max-width: 1140px;
+}
+
+.row {
+	margin-left: -0.7em;
+	margin-right: -0.7em;
+}
+
+.container:after,
+.row::before,
+.row::after { content: " "; display: table; }
+.row::after { clear: both; }
+
+.column,
+.columns {
+	float: left;
+	width: calc(100% - 1.4em);
+	min-height: 1px;
+	margin-left: 0.7em;
+	margin-right: 0.7em;
+}
+
+@media (min-width: 48em) { /* Mobile phone in landscape will see desktop view. Maybe should make it 40.063em */
+
+	.one.column,
+	.one.columns						{ width: calc(8.33333% - 1.4em); }
+	.two.column,
+	.two.columns						{ width: calc(16.66667% - 1.4em); }
+	.three.column,
+	.three.columns						{ width: calc(25% - 1.4em); }
+	.four.column,
+	.four.columns						{ width: calc(33.33333% - 1.4em); }
+	.five.column,
+	.five.columns						{ width: calc(41.66667% - 1.4em); }
+	.six.column,
+	.six.columns						{ width: calc(50% - 1.4em); }
+	.seven.column,
+	.seven.columns						{ width: calc(58.33333% - 1.4em); }
+	.eight.column,
+	.eight.columns						{ width: calc(66.66667% - 1.4em); }
+	.nine.column,
+	.nine.columns						{ width: calc(75% - 1.4em); }
+	.ten.column,
+	.ten.columns						{ width: calc(83.33333% - 1.4em); }
+	.eleven.column,
+	.eleven.columns						{ width: calc(91.66667% - 1.4em); }
+	.twelve.column,
+	.twelve.columns						{ width: calc(100% - 1.4em); }
+	.fith.column,
+	.fith.columns						{ width: calc(20% - 1.4em); }
+
+	/* Standard offsets by a factor of the column width */
+	.offset-by-one.column,
+	.offset-by-one.columns				{ margin-left: calc(8.33333% + 0.7em); }
+	.offset-by-two.column,
+	.offset-by-two.columns				{ margin-left: calc(16.66667% + 0.7em); }
+	.offset-by-three.column,
+	.offset-by-three.columns			{ margin-left: calc(25% + 0.7em); }
+	.offset-by-four.column,
+	.offset-by-four.columns				{ margin-left: calc(33.33333% + 0.7em); }
+	.offset-by-five.column,
+	.offset-by-five.columns				{ margin-left: calc(41.66667% + 0.7em); }
+	.offset-by-six.column,
+	.offset-by-six.columns				{ margin-left: calc(50% + 0.7em); }
+	.offset-by-seven.column,
+	.offset-by-seven.columns			{ margin-left: calc(58.33333% + 0.7em); }
+	.offset-by-eight.column,
+	.offset-by-eight.columns			{ margin-left: calc(66.66667% + 0.7em); }
+	.offset-by-nine.column,
+	.offset-by-nine.columns				{ margin-left: calc(75% + 0.7em); }
+	.offset-by-ten.column,
+	.offset-by-ten.columns				{ margin-left: calc(83.33333% + 0.7em); }
+	.offset-by-eleven.column,
+	.offset-by-eleven.columns			{ margin-left: calc(91.66667% + 0.7em); }
+
+	/* Center odd remaining columns accross the row width */
+	.offset-for-one.column,
+	.offset-for-one.columns				{ margin-left: calc(45.83334% + 0.7em); }
+	.offset-for-three.column,
+	.offset-for-three.columns			{ margin-left: calc(37.5% + 0.7em); }
+	.offset-for-five.column,
+	.offset-for-five.columns			{ margin-left: calc(29.16666% + 0.7em); }
+	.offset-for-seven.column,
+	.offset-for-seven.columns			{ margin-left: calc(20.833333% + 0.7em); }
+	.offset-for-nine.column,
+	.offset-for-nine.columns			{ margin-left: calc(12.5% + 0.7em); }
+	.offset-for-eleven.column,
+	.offset-for-eleven.columns			{ margin-left: calc(4.166665% + 0.7em); }
+	.offset-for-fith.columns			{ margin-left: calc(40% + 0.7em); }
+}
+
+
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+*, *::before, *::after {
+	-webkit-box-sizing: inherit;
+					box-sizing: inherit; }
+
+html {
+	font-size: 1em;
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box; }
+
+body {
+	font-size: 1rem;
+	line-height: 1.6rem;
+	font-weight: 300;
+	font-family: 'Raleway', serif;
+	color: #222; }
+
+
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+	margin-bottom: 1rem;
+	font-weight: 700; }
+
+h1 { font-size: 3.6rem; line-height: 1.2;  letter-spacing: -.1rem;}
+h2 { font-size: 3.0rem; line-height: 1.25; letter-spacing: -.1rem; }
+h3 { font-size: 2.4rem; line-height: 1.3;  letter-spacing: -.1rem; }
+h4 { font-size: 1.8rem; line-height: 1.35; letter-spacing: -.08rem; }
+h5 { font-size: 1.5rem; line-height: 1.5;  letter-spacing: -.05rem; }
+h6 { font-size: 1.2rem; line-height: 1.6; letter-spacing: 0; }
+
+/* Larger than phablet */
+@media (min-width: 48em) {
+	h1 { font-size: 4.0rem; }
+	h2 { font-size: 3.6rem; }
+	h3 { font-size: 3.0rem; }
+	h4 { font-size: 2.4rem; }
+	h5 { font-size: 1.5rem; }
+	h6 { font-size: 1.0rem; }
+}
+
+p {
+	margin-top: 0; }
+
+
+/* Links
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+	color: #1EAEDB;
+	text-decoration: none; }
+
+a:hover {
+	color: #0FA0CE;
+	text-decoration: underline; }
+
+
+/* Buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	display: inline-block;
+	height: 38px;
+	padding: 0 30px;
+	color: #6f6f6f;
+	text-align: center;
+	font-size: 11px;
+	font-weight: 700;
+	line-height: 38px;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+	text-decoration: none !important;
+	white-space: nowrap;
+	background-color: transparent;
+	border-radius: 4px;
+	border: 1px solid #6f6f6f;
+	cursor: pointer;
+	margin: 5px 0;
+	-webkit-transition: background-color 0.3s, border-color 0.3s;
+	-o-transition: background-color 0.3s, border-color 0.3s;
+	transition: background-color 0.3s, border-color 0.3s; }
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+	color: #222222;
+	border-color: #222222;
+	outline: 0; }
+
+.button:disabled,
+.button:disabled:hover,
+.button.disabled,
+button[disabled]:active, button[disabled],
+input[type="button"][disabled]:active,
+input[type="button"][disabled],
+input[type="submit"][disabled]:active,
+input[type="submit"][disabled] ,
+button[disabled]:hover,
+input[type="button"][disabled]:hover,
+input[type="submit"][disabled]:hover {
+	opacity: 0.3;
+	cursor: not-allowed;
+	pointer-events: none;
+	}
+
+
+/* Forms
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+	padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+	background-color: #FFF;
+	border: 1px solid #D1D1D1;
+	border-radius: 4px;
+	-webkit-box-shadow: none;
+					box-shadow: none; }
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+select:not([size]),
+textarea:not([rows]) {
+	height: 38px; }
+
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="button"],
+input[type="submit"],
+textarea {
+	appearance: none; }
+
+textarea {
+	min-height: 65px;
+	padding-top: 6px;
+	padding-bottom: 6px; }
+
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+	border: 1px solid #33C3F0;
+	outline: 0; }
+
+label,
+legend {
+	display: block;
+	margin-bottom: .5rem;
+	font-weight: 600; }
+
+fieldset {
+	padding: 0;
+	border-width: 0; }
+
+input[type="checkbox"],
+input[type="radio"] {
+	display: inline;
+	margin-right: .5rem; }
+
+label > .label-body {
+	display: inline-block;
+	margin-left: 0rem;
+	font-weight: normal; }
+
+.information-box p, .confirmation-box p, .error-box p, .warning-box p {
+		padding: 0.833em 0.833em 0.833em 3em;
+		margin-bottom: 0em;
+}
+
+.information-box {
+		background: #e5f5f9 url('../images/icons/information.png') no-repeat 0.833em center;
+		border: 1px solid #cae0e5;
+		color: #5a9bab;
+}
+
+.confirmation-box {
+		background: #e7fae6 url('../images/icons/confirmation.png') no-repeat 0.833em center;
+		border: 1px solid #b7cbb6;
+		color: #52964f;
+}
+
+.error-box {
+		background: #fde8e4 url('../images/icons/error.png') no-repeat 0.833em center;
+		border: 1px solid #e6bbb3;
+		color: #cf4425;
+}
+
+.warning-box {
+		background: #fdf7e4 url('../images/icons/warning.png') no-repeat 0.833em center;
+		border: 1px solid #e5d9b2;
+		color: #b28a0b;
+}
+
+/* Lists
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+ul {
+	list-style: circle inside; }
+	ul.outside {
+		list-style-position: outside; }
+
+ol {
+	list-style: decimal inside; }
+	ol.outside {
+		list-style-position: outside; }
+
+ol, ul {
+	padding-left: 0;
+	margin-top: 0; }
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+	margin: 1.5rem 0 1.5rem 3rem;
+	font-size: 90%; }
+
+li {
+	margin-bottom: 1rem; }
+
+
+/* Code
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+code {
+	padding: .2rem .5rem;
+	margin: 0 .2rem;
+	font-size: 90%;
+	white-space: nowrap;
+	background: #F1F1F1;
+	border: 1px solid #E1E1E1;
+	border-radius: 4px; }
+
+pre > code {
+	display: block;
+	padding: 1rem 1.5rem;
+	white-space: pre;
+	overflow: auto; }
+
+
+/* Tables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-top: .5em; }
+	@media screen and (max-width: 640px) {
+		table {
+			width: 100%;
+			overflow-x: auto;
+			display: block; } }
+
+td, th {
+	padding: 12px 15px;
+	text-align: left;
+	border-bottom: 1px solid #E1E1E1; }
+
+tr:hover,
+tr:nth-child(even):hover,
+tr:hover,
+tr:nth-child(odd):hover {
+	background-color: #ebebeb;
+}
+
+th:first-child,
+td:first-child {
+	padding-left: 15px; }
+
+th:last-child,
+td:last-child {
+	padding-right: 15px; }
+
+tr:nth-child(even) { background: #F8F8F8; }
+
+/* Blockquote
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+blockquote {
+	background: #f9f9f9;
+	border-left: 10px solid #ccc;
+	margin: 1.5em 10px;
+	padding: 0.5em 10px;
+	quotes: "\201C" "\201D" "\2018" "\2019";
+	display: table;
+}
+blockquote:before {
+	color: #ccc;
+	content: open-quote;
+	font-size: 4em;
+	line-height: 0.1em;
+	margin-right: 0.25em;
+	vertical-align: -0.5em;
+	font-family: Georgia, serif;
+	font-style: italic;
+}
+blockquote p {
+	display: inline;
+}
+blockquote cite {
+	color: #999999;
+	font-size: 14px;
+	display: block;
+	margin-top: 5px;
+}
+
+blockquote cite:before {
+	content: "\2014 \2009";
+}
+
+/* Tooltip
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.tooltip {
+    display: inline-block;
+	position: relative;
+    text-align: center;
+}
+
+.tooltip:hover:after {
+	background: rgba(0,0,0,.8);
+	border-radius: 5px;
+	bottom: 26px;
+	color: #fff;
+	content: attr(rel);
+	left: 50%;
+    transform: translate(-50%);
+	padding: 5px 15px;
+	position: absolute;
+	z-index: 98;
+	width: 180px;
+    font-weight: initial;
+    font-size: initial;
+    line-height: initial;
+    text-transform: initial;
+    white-space: initial;
+}
+.tooltip:hover:before {
+	border: solid;
+	border-color: #333 transparent;
+	border-width: 6px 6px 0 6px;
+	bottom: 21px;
+	content: "";
+	left: 50%;
+	position: absolute;
+	z-index: 99;
+}
+.tooltip.button:hover:after {
+    bottom: 46px;
+}
+.tooltip.button:hover:before {
+    bottom: 41px;
+}
+
+/* Spacing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+button,
+.button {
+	margin-bottom: 1rem; }
+
+button i, a i {
+	margin-right: 0.5rem;
+}
+
+input,
+textarea,
+select,
+fieldset {
+	margin-bottom: 1.5rem; }
+
+pre,
+blockquote,
+dl,
+figure,
+table,
+p:not(:last-child),
+ul,
+ol,
+form {
+	margin-bottom: 2.5rem; }
+
+/* Utilities
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.u-full-width {
+	width: 100%; }
+
+.u-max-full-width {
+	max-width: 100%; }
+
+/* Floats */
+.u-pull-right {
+	float: right; }
+
+.u-pull-left {
+	float: left; }
+
+.u-cf {
+	content: "";
+	display: table;
+	clear: both; }
+
+/* Positioning */
+.u-center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto; }
+
+/**
+ * Note:
+ *
+ * Nest this class inside something with `position: relative` to have
+ * your element centered relative to its containing element.
+ *
+ * Use this class without nesting it to have your element centered relative
+ * to the viewport.
+ */
+.u-center-abs {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translateY(-50%) translateX(-50%);
+			-ms-transform: translateY(-50%) translateX(-50%);
+					transform: translateY(-50%) translateX(-50%); }
+
+/* Type */
+.u-text-center {
+	text-align: center !important; }
+
+.u-text-right {
+	text-align: right !important; }
+
+.u-text-hide {
+	font: 0/0 a;
+	color: transparent;
+	text-shadow: none;
+	background-color: transparent;
+	border: 0; }
+
+/* Peek a boo */
+.u-hide {
+	display: none !important; }
+
+.u-show {
+	display: block !important; }
+
+.u-invisible {
+	visibility: hidden !important; }
+
+.u-visible {
+	visibility: visible !important; }
+
+.u-img-responsive {
+	display: block;
+	max-width: 100%;
+	width: 100%;
+	height: auto; }
+
+/* Misc
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+hr {
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+	border-width: 0;
+	border-top: 1px solid #E1E1E1; }
