@@ -1,12 +1,12 @@
-# [Tinman.css](https://github.com/Linuxweb/tinmancss)
+# [TinManCSS](https://bit.ly/3N9XwxR)
 
-[![GitHub issues](https://img.shields.io/github/issues/Linuxweb/tinmncss?style=for-the-badge)](https://github.com/Linuxweb/tinmncss/issues)
-[![GitHub stars](https://img.shields.io/github/stars/Linuxweb/tinmancss?style=for-the-badge)](https://github.com/Linuxweb/tinmancss/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/Linuxweb/tinmancss?style=for-the-badge)](https://github.com/Linuxweb/tinmancss/network)
+[![GitHub issues](https://img.shields.io/github/issues/Linuxweb/TinManCSS?style=for-the-badge)](https://github.com/Linuxweb/TinManCSS/issues)
+[![GitHub stars](https://img.shields.io/github/stars/Linuxweb/TinManCSS?style=for-the-badge)](https://github.com/Linuxweb/TinManCSS/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Linuxweb/TinManCSS?style=for-the-badge)](https://github.com/Linuxweb/TinManCSS/network)
 
 Tinman.css is a dead simple, responsive boilerplate to kickstart any responsive web projects that are desktop first based.
 
-Check out [TinmanCSS here](https://bit.ly/3oGX8h1) for Documentation and Demo
+Check out [TinmanCSS](https://bit.ly/43JzXS5) for Documentation and Demo
 
 # What's in the project?
 
