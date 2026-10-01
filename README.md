@@ -6,7 +6,7 @@
 
 Tinman.css is a dead simple, responsive boilerplate to kickstart any responsive web projects that are desktop first based.
 
-Check out [TinmanCSS](https://bit.ly/43JzXS5) for Documentation and Demo
+Check out [TinmanCSS](https://tinmancss.linuxweb.co.za/) for Documentation and Demo
 
 # What's in the project?
 
