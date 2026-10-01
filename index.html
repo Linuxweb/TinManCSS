@@ -53,7 +53,7 @@
 			<p>This index.php page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="//tinmancss.linuxweb.co.za" rel="This is a sample of some tooltip text." class="tooltip">tinman.css</a> Starter Page.</p>
 			<h2>Buttons</h2>
 			<input type="submit" name="button" class="button" value="Button">
-			<a href="#" class="button button-primary">Button</a>
+			<a href="#" class="button button-info">Button</a>
 			<a href="#" class="button button-danger"><i class="fa fa-trash-o fa-2x fa-lg"></i> Button</a>
 			<a href="#" class="button button-warning"><i class="fa fa-cog fa-2x fa-lg"></i> Button</a>
 			<a href="#" class="button button-success tooltip" rel="This is a button with a tooltip."><i class="fa fa-check fa-lg"></i> Button</a>
@@ -70,7 +70,7 @@
 			<a href="#" class="button button-orange">Button</a>
 			<a href="#" class="button button-red">Button</a>
 			<a href="#" class="button button-pink tooltip" rel="This is another example of a button with a tooltip.">Button</a>
-			<a class="button button-primary disabled">Disabled</a>
+			<a class="button button-info disabled">Disabled</a>
 			<input type="submit" name="button" class="button button-green" value="Disabled" disabled>
 		</div>
 	</div>
@@ -194,17 +194,17 @@
 				<textarea class="u-full-width" placeholder="Hey guys &hellip;" id="exampleMessage" rows="5"></textarea>
 			</div>
 			<div class="seven columns offset-for-seven">
-				<label for="RandomTextBox">Centered text box</label>
-				<input id="RandomTextBox" class="u-full-width" type="text" name="" placeholder="This is some random text box">
+				<label for="RandomTextBox">Centered text box (no autocomplete)</label>
+				<input id="RandomTextBox" class="u-full-width" type="text" name="" placeholder="This is some random text box" autocomplete="off">
 			</div>
 			<div class="twelve columns">
 				<label class="u-pull-right">
 					<input type="checkbox">
 					<span class="label-body">Send a copy to yourself</span>
 				</label>
-				<input class="button-primary" type="submit" value="Submit">
+				<input class="button-info" type="submit" value="Submit">
 				<input class="button" type="submit" value="Submit">
-				<input class="button-clear" type="submit" value="Submit">
+				<input class="button button-green" type="submit" value="Submit" disabled>
 			</div>
 		</form>
 	</div>
@@ -250,15 +250,12 @@
 			<img src="https://unsplash.it/600/300?random=1" class="u-img-responsive">
 		</div>
 		<div class="four columns">
-			<img src="https://unsplash.it/600/300?random=1" class="u-img-responsive">
-		</div>
-		<div class="four columns">
 			<img src="https://unsplash.it/600/300?random=2" class="u-img-responsive">
 		</div>
 		<div class="four columns">
 			<img src="https://unsplash.it/600/300?random=3" class="u-img-responsive">
 		</div>
-		<div class="three columns">
+		<div class="four columns">
 			<img src="https://unsplash.it/600/300?random=4" class="u-img-responsive">
 		</div>
 		<div class="three columns">
@@ -270,16 +267,16 @@
 		<div class="three columns">
 			<img src="https://unsplash.it/600/300?random=7" class="u-img-responsive">
 		</div>
-		<div class="eight columns">
+		<div class="three columns">
 			<img src="https://unsplash.it/600/300?random=8" class="u-img-responsive">
 		</div>
-		<div class="four columns">
+		<div class="eight columns">
 			<img src="https://unsplash.it/600/300?random=9" class="u-img-responsive">
 		</div>
-		<div class="twelve columns">
+		<div class="four columns">
 			<img src="https://unsplash.it/600/300?random=10" class="u-img-responsive">
 		</div>
-		<div class="fith columns">
+		<div class="twelve columns">
 			<img src="https://unsplash.it/600/300?random=11" class="u-img-responsive">
 		</div>
 		<div class="fith columns">
@@ -294,16 +291,29 @@
 		<div class="fith columns">
 			<img src="https://unsplash.it/600/300?random=15" class="u-img-responsive">
 		</div>
+		<div class="fith columns">
+			<img src="https://unsplash.it/600/300?random=16" class="u-img-responsive">
+		</div>
 	</div>
 </div>
 <hr>
 <div class="container">
 	<div class="row">
 		<div class="six columns">
-			<p>&copy; Copyright <script>document.write(new Date().getFullYear())</script> | <i class="fa fa-code" title="Coded"></i> with <i class="fa fa-heart-o heartbeat" title="Love"></i> by <a href="http://www.linuxweb.co.za" title="Coded with Love by Linuxweb">Linuxweb</a></p>
+			<p class="u-no-margin">&copy; Copyright <script>document.write(new Date().getFullYear())</script> | <i class="fa fa-code" title="Coded"></i> with <i class="fa fa-heart-o heartbeat" title="Love"></i> by <a href="http://www.linuxweb.co.za" title="Coded with Love by Linuxweb">Linuxweb</a></p>
 		</div>
 		<div class="six columns">
-			<p class="u-pull-right"> All rights reserved</p>
+			<p class="u-text-right u-no-margin"> All rights reserved &nbsp;&nbsp;|&nbsp;&nbsp;
+				<i class="socicon-linkedin"></i>
+				<i class="socicon-facebook"></i>
+				<i class="socicon-twitter"></i>
+				<i class="socicon-x"></i>
+				<i class="socicon-instagram"></i>
+				<i class="socicon-reddit"></i>
+				<i class="socicon-youtube"></i>
+				<i class="socicon-discord"></i>
+				<i class="socicon-slack"></i>
+			</p>
 		</div>
 	</div>
 </div>

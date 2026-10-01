@@ -15,11 +15,14 @@ The project contains everything needed to start a fully functional website proje
 ```
 ProtoBase/
 ├── index.html
+├── 403.html
 ├── 404.html
+├── 500.html
 ├── crossdomain.xml
 ├── htaccess.txt
 ├── humans.txt
-├── Protobone.FH11
+├── LICENSE
+├── llms.txt
 ├── README.md
 ├── robots.txt
 ├── back-office/
@@ -29,7 +32,7 @@ ProtoBase/
 |   ├── fonts.css
 |   ├── layout.css
 |   ├── normalize.css
-│   └── protobone.css
+│   └── tinman.css
 ├── fonts/
 │   ├── Socicon.eot
 |   ├── Socicon.svg
@@ -39,7 +42,9 @@ ProtoBase/
 ├── images/
 │   ├── icons
 │   	└── Essential icons for forms & notifications
+│   ├── 403.jpg
 │   ├── 404.jpg
+│   ├── 500.jpg
 │   ├── android-chrome-192x192.png
 │   ├── android-chrome-512x512.png
 │   ├── apple-touch-icon.png
@@ -105,6 +110,7 @@ A project by **[Selwyn Orren](https://github.com/linuxweb)** and [Others](https:
 
 * Thanks to [Dave Gamache](https://github.com/dhg) for an awesome Framework that change my life
 * Thanks to [Matt McInerney](https://fonts.google.com/specimen/Raleway) for Raleway FontFace
+* Thanks to [Unsplash](https://unsplash.com/) for error page images
 
 ---
 
