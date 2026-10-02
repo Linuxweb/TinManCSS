@@ -77,8 +77,8 @@
 	.eleven.columns						{ width: calc(91.66667% - 1.4em); }
 	.twelve.column,
 	.twelve.columns						{ width: calc(100% - 1.4em); }
-	.fith.column,
-	.fith.columns						{ width: calc(20% - 1.4em); }
+	.fifth.column,
+	.fifth.columns						{ width: calc(20% - 1.4em); }
 
 	/* Standard offsets by a factor of the column width */
 	.offset-by-one.column,
@@ -117,7 +117,7 @@
 	.offset-for-nine.columns			{ margin-left: calc(12.5% + 0.7em); }
 	.offset-for-eleven.column,
 	.offset-for-eleven.columns			{ margin-left: calc(4.166665% + 0.7em); }
-	.offset-for-fith.columns			{ margin-left: calc(40% + 0.7em); }
+	.offset-for-fifth.columns			{ margin-left: calc(40% + 0.7em); }
 }
 
 
