@@ -1,9 +1,9 @@
 /*
-* Tinman.css | v1.0.0 | MIT | July 4th, 2017
-* Copyright 2023, Selwyn Orren @ Linuxweb
+* Tinman.css | v2.0.0 | MIT | 2026
+* Copyright 2026, Selwyn Orren @ Linuxweb
 * Free to use under the MIT license.
-* http://www.opensource.org/licenses/mit-license.php
-* 04/07/2017
+* https://opensource.org/licenses/MIT
+* Based on Skeleton, Copyright 2011-2014 Dave Gamache, MIT
 */
 
 $(document).ready(function() {

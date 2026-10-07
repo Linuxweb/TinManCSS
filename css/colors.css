@@ -1,23 +1,60 @@
 /*
-* Tinman.css | v1.0.0 | MIT | July 4th, 2017
-* Copyright 2023, Selwyn Orren @ Linuxweb
+* Tinman.css | v2.0.0 | MIT | 2026
+* Copyright 2026, Selwyn Orren @ Linuxweb
 * Free to use under the MIT license.
-* http://www.opensource.org/licenses/mit-license.php
-* 04/07/2017
+* https://opensource.org/licenses/MIT
+* Based on Skeleton, Copyright 2011-2014 Dave Gamache, MIT
 */
 
 /* Root Colouring
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+––––––––––––––––––––––––––––––––––––––––––––––––––
+Every token is light-dark(light value, dark value). Which one is used depends
+on color-scheme:
+- Automatic: follows the visitor's operating system or browser setting.
+- Forced: put data-theme="light" or data-theme="dark" on the <html> element. */
 :root {
-	--primary: #1EAEDB;
-	--primary-hover: #0FA0CE;
-	--secondary: #6f6f6f;
-	--secondary-hover: #222222;
-	--tertiary: #D1D1D1;
-	--tertiary-hover: #BCBCBC;
-	--body: #222222;
-	--background: #FEFEFE;
+	color-scheme: light dark;
+
+	--primary: light-dark(#0A7298, #3CC4EE);          /* 5.4:1 on the page background, passes WCAG AA for text */
+	--primary-hover: light-dark(#075F7F, #6FD3F3);
+	--accent: light-dark(#1EAEDB, #3CC4EE);         /* the light blue for fills: buttons and icons. Text in this blue fails contrast on white, so text uses --primary */
+	--accent-hover: light-dark(#188AAE, #6FD3F3);
+	--on-accent: light-dark(#111111, #161718);      /* label on an accent button, 7.3:1 and 4.8:1 on the hover */
+	--secondary: light-dark(#6f6f6f, #A8A8A8);
+	--secondary-hover: light-dark(#222222, #F0F0F0);
+	--tertiary: light-dark(#D1D1D1, #444444);
+	--tertiary-hover: light-dark(#BCBCBC, #5A5A5A);
+	--body: light-dark(#222222, #E4E4E4);
+	--background: light-dark(#FEFEFE, #161718);
+
+	--surface: light-dark(#FFFFFF, #1F2123);        /* form fields */
+	--surface-soft: light-dark(#F1F1F1, #26292B);   /* code */
+	--surface-faint: light-dark(#F8F8F8, #1C1E20);  /* striped rows, blockquote */
+	--surface-hover: light-dark(#EBEBEB, #2D3033);  /* table row hover */
+	--line: light-dark(#E1E1E1, #3A3D40);           /* table, code and hr borders */
+	--line-strong: light-dark(#CCCCCC, #55595C);    /* blockquote bar and quote mark */
+	--muted: light-dark(#999999, #8A8F93);          /* blockquote cite */
+
+	--info-bg: light-dark(#e5f5f9, #12303A);
+	--info-line: light-dark(#cae0e5, #1F4A57);
+	--info-text: light-dark(#5a9bab, #7CC3D4);
+	--confirm-bg: light-dark(#e7fae6, #16301A);
+	--confirm-line: light-dark(#b7cbb6, #27502B);
+	--confirm-text: light-dark(#52964f, #7FC47B);
+	--error-bg: light-dark(#fde8e4, #3A1A14);
+	--error-line: light-dark(#e6bbb3, #5C2B22);
+	--error-text: light-dark(#cf4425, #F07A5E);
+	--warning-bg: light-dark(#fdf7e4, #352C10);
+	--warning-line: light-dark(#e5d9b2, #5A4A1A);
+	--warning-text: light-dark(#b28a0b, #E0B84E);
+
+	--tooltip-bg: light-dark(rgba(0,0,0,.8), #E4E4E4);
+	--tooltip-text: light-dark(#ffffff, #161718);
+	--tooltip-arrow: light-dark(#333333, #E4E4E4);
 }
+
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"]  { color-scheme: dark; }
 
 /* Base Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -65,7 +102,7 @@ input[type="url"],
 input[type="password"],
 textarea,
 select {
-	background-color: #FFFfff;
+	background-color: var(--surface);
 	border-color: var(--tertiary);
 }
 input[type="email"]:focus,
@@ -81,40 +118,40 @@ select:focus {
 	border-color: var(--primary);
 }
 .information-box {
-		background-color: #e5f5f9;
-		border-color: #cae0e5;
-		color: #5a9bab;
+		background-color: var(--info-bg);
+		border-color: var(--info-line);
+		color: var(--info-text);
 }
 
 .confirmation-box {
-		background-color: #e7fae6;
-		border-color: #b7cbb6;
-		color: #52964f;
+		background-color: var(--confirm-bg);
+		border-color: var(--confirm-line);
+		color: var(--confirm-text);
 }
 
 .error-box {
-		background-color: #fde8e4;
-		border-color: #e6bbb3;
-		color: #cf4425;
+		background-color: var(--error-bg);
+		border-color: var(--error-line);
+		color: var(--error-text);
 }
 
 .warning-box {
-		background-color: #fdf7e4 ;
-		border-color: #e5d9b2;
-		color: #b28a0b;
+		background-color: var(--warning-bg);
+		border-color: var(--warning-line);
+		color: var(--warning-text);
 }
 
 /* Code
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 code {
-	background: #F1F1F1;
-	border-color: #E1E1E1;
+	background: var(--surface-soft);
+	border-color: var(--line);
 }
 
 /* Tables
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 td, th {
-	border-bottom-color: #E1E1E1; }
+	border-bottom-color: var(--line); }
 
 thead {
 	background: #333;
@@ -126,38 +163,38 @@ tbody tr:hover,
 tbody tr:nth-child(even):hover,
 tbody tr:hover,
 tbody tr:nth-child(odd):hover {
-	background-color: #ebebeb;
+	background-color: var(--surface-hover);
 }
 
-tr:nth-child(even) { background: #F8F8F8; }
+tr:nth-child(even) { background: var(--surface-faint); }
 
 /* Blockquote
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 blockquote {
-	background: #f9f9f9;
-	border-left-color: #ccc;
+	background: var(--surface-faint);
+	border-left-color: var(--line-strong);
 }
 blockquote:before {
-	color: #ccc;
+	color: var(--line-strong);
 }
 blockquote cite {
-	color: #999999;
+	color: var(--muted);
 }
 
 /* Tooltip
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .tooltip:hover:after {
-	background: rgba(0,0,0,.8);
-	color: #fff;
+	background: var(--tooltip-bg);
+	color: var(--tooltip-text);
 }
 .tooltip:hover:before {
-	border-color: #333 transparent;
+	border-color: var(--tooltip-arrow) transparent;
 }
 
 /* Misc
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 hr {
-	border-top-color: #E1E1E1; }
+	border-top-color: var(--line); }
 
 
 /* Custom link/text colors
@@ -174,22 +211,34 @@ hr {
 .red										{ color: #e16c6c; }
 .pink										{ color: #efa7c9; }
 .yellow									{ color: #edbf47; }
-.greendark							{ color: #6ab78a; }
-.bluedark								{ color: #6fc4d9; }
-.violetdark							{ color: #ac7ab5; }
-.orangedark							{ color: #df764e; }
-.reddark								{ color: #c86969; }
-.yellowdark							{ color: #e0b84e; }
+.greendark							{ color: #3e815a; }
+.bluedark								{ color: #267e94; }
+.violetdark							{ color: #9b5da6; }
+.orangedark							{ color: #c45024; }
+.reddark								{ color: #bf5151; }
+.yellowdark							{ color: #91701a; }
+.pinkdark							{ color: #c94181; }
 
+/* Every text colour changes on hover, a step darker in the same hue */
+a:hover.white						{ color: #e6e6e6; }
 a:hover.grey						{ color: #CCCCCC; }
-a:hover.greydark				{ color: #2E3233; }
+a:hover.grey2						{ color: #d9d9d9; }
+a:hover.greydark						{ color: #2E3233; }
+a:hover.greydark2						{ color: #2b2f30; }
 a:hover.green						{ color: #61A87E; }
 a:hover.blue						{ color: #66B6CA; }
-a:hover.violet					{ color: #AC78B5; }
-a:hover.orange					{ color: #D46B43; }
-a:hover.red							{ color: #C75F5F; }
-a:hover.pink						{ color: #efa7c9; }
-a:hover.yellow					{ color: #D4AB3F; }
+a:hover.violet						{ color: #AC78B5; }
+a:hover.orange						{ color: #D46B43; }
+a:hover.red						{ color: #C75F5F; }
+a:hover.pink						{ color: #d796b4; }
+a:hover.yellow						{ color: #D4AB3F; }
+a:hover.greendark						{ color: #336949; }
+a:hover.bluedark						{ color: #1f6677; }
+a:hover.violetdark						{ color: #864f90; }
+a:hover.orangedark						{ color: #a6441f; }
+a:hover.reddark						{ color: #ad3f3f; }
+a:hover.pinkdark						{ color: #b3336f; }
+a:hover.yellowdark						{ color: #725814; }
 
 /* Standard Background Colours*/
 .bg_white								{ background-color: #ffffff; }
@@ -204,12 +253,13 @@ a:hover.yellow					{ color: #D4AB3F; }
 .bg_red									{ background-color: #e16c6c; }
 .bg_pink								{ background-color: #efa7c9; }
 .bg_yellow							{ background-color: #edbf47; }
-.bg_greendark						{ background-color: #6ab78a; }
-.bg_bluedark						{ background-color: #6fc4d9; }
-.bg_violetdark					{ background-color: #ac7ab5; }
-.bg_orangedark					{ background-color: #df764e; }
-.bg_reddark							{ background-color: #c86969; }
-.bg_yellowdark					{ background-color: #e0b84e; }
+.bg_greendark						{ background-color: #3e815a; }
+.bg_bluedark						{ background-color: #267e94; }
+.bg_violetdark					{ background-color: #9b5da6; }
+.bg_orangedark					{ background-color: #c45024; }
+.bg_reddark							{ background-color: #bf5151; }
+.bg_yellowdark					{ background-color: #91701a; }
+.bg_pinkdark					{ background-color: #c94181; }
 
 .bg_gradient						{
 													background: #74cee4; /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */ /* IE10+ */
@@ -249,8 +299,8 @@ a:hover.yellow					{ color: #D4AB3F; }
 .button-yellow					{ color: #ffffff !important; background-color: #edbf47 !important; border-color: #edbf47 !important; }
 .button-yellow:hover		{ color: #ffffff !important; background-color: #D4AB3F !important; border-color: #D4AB3F !important; }
 
-.button-info						{ color: #ffffff !important; background-color: #1EAEDB !important; border-color: #1EAEDB !important; }
-.button-info:hover			{ color: #ffffff !important; background-color: #188aae !important; border-color: #188aae !important; }
+.button-info						{ color: var(--on-accent) !important; background-color: var(--accent) !important; border-color: var(--accent) !important; }
+.button-info:hover			{ color: var(--on-accent) !important; background-color: var(--accent-hover) !important; border-color: var(--accent-hover) !important; }
 
 .button-error						{ color: #ffffff !important; background-color: #F44336 !important; border-color: #F44336 !important; }
 .button-error:hover			{ color: #ffffff !important; background-color: #ea1c0d !important; border-color: #ea1c0d !important; }

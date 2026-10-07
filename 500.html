@@ -2,11 +2,25 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Page Not Found</title>
+	<title>Server Error</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,300,600" type="text/css">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,700,900&display=swap">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
 	<style>
+		/* Standalone on purpose: no link to the css/ files, so the page still renders
+		   when its assets are broken or when the URL is nested (relative paths break there).
+		   The button, spacing and box-sizing rules are copied from tinman.css and colors.css,
+		   keep them in sync. */
+
+		html {
+			box-sizing: border-box;
+		}
+
+		*, *::before, *::after {
+			box-sizing: inherit;
+		}
 
 		* {
 			line-height: 1.2;
@@ -45,37 +59,55 @@
 		}
 
 		p {
-			margin: 0 auto 20px;
+			margin: 0 auto 1.4rem;
 			width: 40%;
 		}
-.missing {
-border: 1px solid rgba(255,255,255, .5);
-max-width: 50%;
-padding: 47px 30px 53px;
-margin: 0 auto;
-}
-.button {
-	border-radius: 5px;
-	color: #111;
-	background: rgba(255,255,255,0.8);
-	height: auto;
-	padding: 6px 17px;
-	text-decoration: none;
 
-font-size:10px;
-letter-spacing:1px;
-}
-.button a {
-	margin: 20px;
-}
+		.missing {
+			border: 1px solid rgba(255,255,255, .5);
+			max-width: 50%;
+			padding: 2.8rem 2.1rem 1.4rem; /* the button brings 1.4rem of its own below it */
+			margin: 0 auto;
+		}
 
-		@media only screen and (max-width: 280px) {
+		/* Buttons, from tinman.css */
+		.button {
+			display: inline-block;
+			height: 38px;
+			padding: 0 30px;
+			text-align: center;
+			font-size: 11px;
+			font-weight: 700;
+			line-height: 38px;
+			letter-spacing: .1rem;
+			text-transform: uppercase;
+			text-decoration: none !important;
+			white-space: nowrap;
+			background-color: transparent;
+			border-radius: 4px;
+			border: 1px solid;
+			cursor: pointer;
+			margin: 5px 0 1.4rem;
+			-webkit-transition: background-color 0.3s, border-color 0.3s;
+			transition: background-color 0.3s, border-color 0.3s;
+		}
+
+		.button i {
+			margin-right: 0.5rem;
+		}
+
+		/* From colors.css, a white button so it reads on the dark photo */
+		.button-white 			{ color: #6f6f6f !important; background-color: #ffffff !important; border-color: #6f6f6f !important; }
+		.button-white:hover 	{ color: #222222 !important; background-color: #ffffff !important; border-color: #6f6f6f !important; }
+
+		@media only screen and (max-width: 17.5em) {
 
 			body, p {
 				width: 95%;
 			}
-		h1 {
-		font-size: 4em;
+
+			h1 {
+				font-size: 4em;
 			}
 
 			h2 {
@@ -91,7 +123,7 @@ letter-spacing:1px;
 	<div class="missing">
 	 <h1>500</h1>
 		<p> Something broke on our end. We've been notified and are looking into it, please try again shortly. </p>
-		<a class="button" href="javascript:history.back()" title="Back to Home page"><i class="fa fa-angle-left"></i> Back to Home Page</a>
+		<a class="button button-white" href="javascript:history.back()" title="Back to Home page"><i class="fa fa-angle-left"></i> Back to Home Page</a>
 	</div>
 </body>
 </html>

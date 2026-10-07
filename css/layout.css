@@ -1,9 +1,9 @@
 /*
-* Tinman.css | v1.0.0 | MIT | July 4th, 2017
-* Copyright 2023, Selwyn Orren @ Linuxweb
+* Tinman.css | v2.0.0 | MIT | 2026
+* Copyright 2026, Selwyn Orren @ Linuxweb
 * Free to use under the MIT license.
-* http://www.opensource.org/licenses/mit-license.php
-* 04/07/2017
+* https://opensource.org/licenses/MIT
+* Based on Skeleton, Copyright 2011-2014 Dave Gamache, MIT
 */
 
 /* Overides
@@ -90,27 +90,30 @@
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /*
-Note: The best way to structure the use of media queries is to create the queries
-near the relevant code. For example, if you wanted to change the styles for buttons
-on small devices, paste the mobile query code up in the buttons section and style it
-there.
+Desktop first: every section above is written for desktop. The queries below
+only override what changes on smaller screens (max-width) or on very large ones
+(min-width). Keep them in this order, widest max-width first, so each narrower
+query can override the one before it. Because they sit after every section, they
+win over the styles above.
+
+Breakpoints are em, based on 16px:
+60em = 960px, 30em = 480px, 90em = 1440px
+The grid in tinman.css stacks below 48em (768px) on its own.
 */
 
-/*
-The following media queries are calculated using the universal em measurement
-and are geared toward the base grid as setup in the skeleton.css file. As a base its using 16px
-Example
-=============
-30em = 480px
-60em = 960px
-So we are targeting all three core viewpoints for each typical device.
-*/
+/* Tablet and down */
+@media screen and (max-width: 60em) {}
 
-/* Mobile Devices */
+/* Mobile */
 @media screen and (max-width: 30em) {}
 
-/* Phablet to Desktop */
-@media screen and (min-width: 30.0625em) and (max-width: 60em) {}
+/* Visitors who ask their system for less motion */
+@media (prefers-reduced-motion: reduce) {
+	.heartbeat {
+		-webkit-animation: none;
+		        animation: none;
+	}
+}
 
-/* Desktop to HD Desktop */
-@media screen and (min-width: 60.0625em) {}
+/* Larger than standard desktop, seldom needed so it stays last */
+@media screen and (min-width: 90em) {}

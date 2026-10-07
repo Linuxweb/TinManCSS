@@ -3,8 +3,7 @@
 
 # TEAM
 
-    Selwyn Orren -- Founder -- https://github.com/Linuxweb
-    Ruben Venter -- Digital Terrain -- https://github.com/Linuxweb
+    Your Name -- Your Role -- https://example.com
 
 # THANKS
 
@@ -14,4 +13,4 @@
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3, Normalize.css
-    jQuery, Socicon, Unsplash
+    jQuery, Raleway, Font Awesome

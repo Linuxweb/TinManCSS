@@ -3,3 +3,6 @@
 # Allow crawling of all content
 User-agent: *
 Disallow:
+
+# Point crawlers at your sitemap once you have one
+# Sitemap: https://example.com/sitemap.xml

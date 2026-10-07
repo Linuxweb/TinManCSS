@@ -14,7 +14,7 @@
 * [Core Features](https://example.com): Detailed breakdown of primary capabilities and tools.
 * [API Reference](https://example.com): Technical endpoints, parameters, and integration examples.
 
-## Optional Links
+## Optional
 
 * [Blog](https://example.com): Latest articles, announcements, and tutorials.
 * [GitHub Repository](https://github.com): Source code and contribution guidelines.

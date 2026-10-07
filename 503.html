@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Page Not Found</title>
+	<title>Service Unavailable</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,7 +42,7 @@
 			display: table-cell;
 			vertical-align: middle;
 			margin: 2em auto;
-			background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), rgba(0,0,0,0.5) url(images/404.jpg) no-repeat  center;
+			background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), rgba(0,0,0,0.5) url(images/500.jpg) no-repeat  center;
 			height: 100vh;
 			background-size: cover;
 		}
@@ -121,9 +121,9 @@
 </head>
 <body>
 	<div class="missing">
-	 <h1>404</h1>
-		<p> The page you were looking for could not be found. </p>
-		<a class="button button-white" href="javascript:history.back()" title="Back to Home page"><i class="fa fa-angle-left"></i> Back to Home Page</a>
+	 <h1>503</h1>
+		<p> We are down for maintenance or briefly overloaded. Please try again shortly. </p>
+		<a class="button button-white" href="javascript:location.reload()" title="Try again"><i class="fa fa-refresh"></i> Try Again</a>
 	</div>
 </body>
 </html>

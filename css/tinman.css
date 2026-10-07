@@ -1,9 +1,9 @@
 /*
-* Tinman.css | v1.0.0 | MIT | July 4th, 2017
-* Copyright 2023, Selwyn Orren @ Linuxweb
+* Tinman.css | v2.0.0 | MIT | 2026
+* Copyright 2026, Selwyn Orren @ Linuxweb
 * Free to use under the MIT license.
-* http://www.opensource.org/licenses/mit-license.php
-* 04/07/2017
+* https://opensource.org/licenses/MIT
+* Based on Skeleton, Copyright 2011-2014 Dave Gamache, MIT
 */
 
 /* Table of contents
@@ -21,6 +21,7 @@
 - Tooltip
 - Spacing
 - Utilities
+- Theme toggle
 - Misc
 */
 
@@ -28,13 +29,15 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .container {
 	margin: 0 auto;
-	width: 80%;
+	width: 90%;
 	max-width: 1140px;
 }
 
 .row {
 	margin-left: -0.7em;
 	margin-right: -0.7em;
+	margin-top: calc(var(--row-gap) * -1);
+	--row-gap: 1.4em; /* vertical gap between wrapped columns, matches the 1.4em horizontal gap. To change it for one row, set --row-gap on that row in layout.css */
 }
 
 .container:after,
@@ -49,75 +52,89 @@
 	min-height: 1px;
 	margin-left: 0.7em;
 	margin-right: 0.7em;
+	margin-top: var(--row-gap);
 }
 
-@media (min-width: 48em) { /* Mobile phone in landscape will see desktop view. Maybe should make it 40.063em */
+/* [DESKTOP FIRST] The widths and offsets below are the base. They used to sit
+   inside @media (min-width: 48em). The query after them now does the opposite
+   job and stacks columns below 48em. */
+.one.column,
+.one.columns						{ width: calc(8.33333% - 1.4em); }
+.two.column,
+.two.columns						{ width: calc(16.66667% - 1.4em); }
+.three.column,
+.three.columns						{ width: calc(25% - 1.4em); }
+.four.column,
+.four.columns						{ width: calc(33.33333% - 1.4em); }
+.five.column,
+.five.columns						{ width: calc(41.66667% - 1.4em); }
+.six.column,
+.six.columns						{ width: calc(50% - 1.4em); }
+.seven.column,
+.seven.columns						{ width: calc(58.33333% - 1.4em); }
+.eight.column,
+.eight.columns						{ width: calc(66.66667% - 1.4em); }
+.nine.column,
+.nine.columns						{ width: calc(75% - 1.4em); }
+.ten.column,
+.ten.columns						{ width: calc(83.33333% - 1.4em); }
+.eleven.column,
+.eleven.columns						{ width: calc(91.66667% - 1.4em); }
+.twelve.column,
+.twelve.columns						{ width: calc(100% - 1.4em); }
+.fifth.column,
+.fifth.columns						{ width: calc(20% - 1.4em); }
 
-	.one.column,
-	.one.columns						{ width: calc(8.33333% - 1.4em); }
-	.two.column,
-	.two.columns						{ width: calc(16.66667% - 1.4em); }
-	.three.column,
-	.three.columns						{ width: calc(25% - 1.4em); }
-	.four.column,
-	.four.columns						{ width: calc(33.33333% - 1.4em); }
-	.five.column,
-	.five.columns						{ width: calc(41.66667% - 1.4em); }
-	.six.column,
-	.six.columns						{ width: calc(50% - 1.4em); }
-	.seven.column,
-	.seven.columns						{ width: calc(58.33333% - 1.4em); }
-	.eight.column,
-	.eight.columns						{ width: calc(66.66667% - 1.4em); }
-	.nine.column,
-	.nine.columns						{ width: calc(75% - 1.4em); }
-	.ten.column,
-	.ten.columns						{ width: calc(83.33333% - 1.4em); }
-	.eleven.column,
-	.eleven.columns						{ width: calc(91.66667% - 1.4em); }
-	.twelve.column,
-	.twelve.columns						{ width: calc(100% - 1.4em); }
-	.fifth.column,
-	.fifth.columns						{ width: calc(20% - 1.4em); }
+/* Standard offsets by a factor of the column width */
+.offset-by-one.column,
+.offset-by-one.columns				{ margin-left: calc(8.33333% + 0.7em); }
+.offset-by-two.column,
+.offset-by-two.columns				{ margin-left: calc(16.66667% + 0.7em); }
+.offset-by-three.column,
+.offset-by-three.columns			{ margin-left: calc(25% + 0.7em); }
+.offset-by-four.column,
+.offset-by-four.columns				{ margin-left: calc(33.33333% + 0.7em); }
+.offset-by-five.column,
+.offset-by-five.columns				{ margin-left: calc(41.66667% + 0.7em); }
+.offset-by-six.column,
+.offset-by-six.columns				{ margin-left: calc(50% + 0.7em); }
+.offset-by-seven.column,
+.offset-by-seven.columns			{ margin-left: calc(58.33333% + 0.7em); }
+.offset-by-eight.column,
+.offset-by-eight.columns			{ margin-left: calc(66.66667% + 0.7em); }
+.offset-by-nine.column,
+.offset-by-nine.columns				{ margin-left: calc(75% + 0.7em); }
+.offset-by-ten.column,
+.offset-by-ten.columns				{ margin-left: calc(83.33333% + 0.7em); }
+.offset-by-eleven.column,
+.offset-by-eleven.columns			{ margin-left: calc(91.66667% + 0.7em); }
 
-	/* Standard offsets by a factor of the column width */
-	.offset-by-one.column,
-	.offset-by-one.columns				{ margin-left: calc(8.33333% + 0.7em); }
-	.offset-by-two.column,
-	.offset-by-two.columns				{ margin-left: calc(16.66667% + 0.7em); }
-	.offset-by-three.column,
-	.offset-by-three.columns			{ margin-left: calc(25% + 0.7em); }
-	.offset-by-four.column,
-	.offset-by-four.columns				{ margin-left: calc(33.33333% + 0.7em); }
-	.offset-by-five.column,
-	.offset-by-five.columns				{ margin-left: calc(41.66667% + 0.7em); }
-	.offset-by-six.column,
-	.offset-by-six.columns				{ margin-left: calc(50% + 0.7em); }
-	.offset-by-seven.column,
-	.offset-by-seven.columns			{ margin-left: calc(58.33333% + 0.7em); }
-	.offset-by-eight.column,
-	.offset-by-eight.columns			{ margin-left: calc(66.66667% + 0.7em); }
-	.offset-by-nine.column,
-	.offset-by-nine.columns				{ margin-left: calc(75% + 0.7em); }
-	.offset-by-ten.column,
-	.offset-by-ten.columns				{ margin-left: calc(83.33333% + 0.7em); }
-	.offset-by-eleven.column,
-	.offset-by-eleven.columns			{ margin-left: calc(91.66667% + 0.7em); }
+/* Center odd remaining columns accross the row width */
+.offset-for-one.column,
+.offset-for-one.columns				{ margin-left: calc(45.83334% + 0.7em); }
+.offset-for-three.column,
+.offset-for-three.columns			{ margin-left: calc(37.5% + 0.7em); }
+.offset-for-five.column,
+.offset-for-five.columns			{ margin-left: calc(29.16666% + 0.7em); }
+.offset-for-seven.column,
+.offset-for-seven.columns			{ margin-left: calc(20.833333% + 0.7em); }
+.offset-for-nine.column,
+.offset-for-nine.columns			{ margin-left: calc(12.5% + 0.7em); }
+.offset-for-eleven.column,
+.offset-for-eleven.columns			{ margin-left: calc(4.166665% + 0.7em); }
+.offset-for-fifth.columns			{ margin-left: calc(40% + 0.7em); }
 
-	/* Center odd remaining columns accross the row width */
-	.offset-for-one.column,
-	.offset-for-one.columns				{ margin-left: calc(45.83334% + 0.7em); }
-	.offset-for-three.column,
-	.offset-for-three.columns			{ margin-left: calc(37.5% + 0.7em); }
-	.offset-for-five.column,
-	.offset-for-five.columns			{ margin-left: calc(29.16666% + 0.7em); }
-	.offset-for-seven.column,
-	.offset-for-seven.columns			{ margin-left: calc(20.833333% + 0.7em); }
-	.offset-for-nine.column,
-	.offset-for-nine.columns			{ margin-left: calc(12.5% + 0.7em); }
-	.offset-for-eleven.column,
-	.offset-for-eleven.columns			{ margin-left: calc(4.166665% + 0.7em); }
-	.offset-for-fifth.columns			{ margin-left: calc(40% + 0.7em); }
+/* Below 48em every column is full width and offsets are ignored.
+   .container .columns is as specific as .six.columns and .offset-by-two.columns
+   and comes after them, so it wins. A plain .columns would lose.
+   47.9375em, not 48em, so a 768px screen still gets the desktop layout, as it
+   did before. */
+@media (max-width: 47.9375em) {
+	.container .column,
+	.container .columns {
+		width: calc(100% - 1.4em);
+		margin-left: 0.7em;
+	}
 }
 
 
@@ -134,38 +151,58 @@ html {
 
 body {
 	font-size: 1rem;
-	line-height: 1.6rem;
+	line-height: 1.618; /* unitless, so smaller text gets a proportional line height and not a fixed 25.6px */
 	font-weight: 300; }
 
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 h1, h2, h3, h4, h5, h6 {
-	margin-top: 2.25rem;
-	margin-bottom: 1rem;
+	margin-top: 2.1rem;
+	margin-bottom: 1.4rem;
 	font-weight: 700; }
 
-/* --- Mobile Base Scale (Optimized Golden Ratio) --- */
-h1 { font-size: 2.618rem; line-height: 1.15; letter-spacing: -0.05em; }
-h2 { font-size: 2.058rem; line-height: 1.2;  letter-spacing: -0.03em; }
-h3 { font-size: 1.618rem; line-height: 1.25; letter-spacing: -0.02em; }
-h4 { font-size: 1.350rem; line-height: 1.3;  letter-spacing: -0.01em; }
-h5 { font-size: 1.150rem; line-height: 1.4;  letter-spacing: 0em; }
-h6 { font-size: 1.000rem; line-height: 1.5;  letter-spacing: 0.01em; }
+/* Golden ratio type scale
+   Sizes step by the square root of the golden ratio (1.272) from the 1rem body
+   text: 1, 1.272, 1.618, 2.058, 2.618, 3.330, 4.236 (the powers of 1.618 are
+   1, 1.618, 2.618 and 4.236).
+   Line height is the font size plus a fixed 0.618rem of leading, so
+   line-height = 1 + 0.618 / size. At 1rem that is 1.618, the golden ratio, and
+   larger text gets proportionally tighter lines. */
 
-/* --- Tablet & Desktop Scale Up (48em / 768px) --- */
-@media (min-width: 48em) {
-	h1 { font-size: 4.236rem; line-height: 1.1;  letter-spacing: -0.06em; }
-	h2 { font-size: 3.236rem; line-height: 1.15; letter-spacing: -0.04em; }
-	h3 { font-size: 2.618rem; line-height: 1.2;  letter-spacing: -0.03em; }
-	h4 { font-size: 2.000rem; line-height: 1.25; letter-spacing: -0.02em; }
-	h5 { font-size: 1.618rem; line-height: 1.3;  letter-spacing: -0.01em; }
-	h6 { font-size: 1.250rem; line-height: 1.4;  letter-spacing: 0em; }
+/* --- Desktop Base Scale --- */
+h1 { font-size: 4.236rem; line-height: 1.146; letter-spacing: -0.06em; }
+h2 { font-size: 3.330rem; line-height: 1.186; letter-spacing: -0.04em; }
+h3 { font-size: 2.618rem; line-height: 1.236; letter-spacing: -0.03em; }
+h4 { font-size: 2.058rem; line-height: 1.300; letter-spacing: -0.02em; }
+h5 { font-size: 1.618rem; line-height: 1.382; letter-spacing: -0.01em; }
+h6 { font-size: 1.272rem; line-height: 1.486; letter-spacing: 0em; }
+
+/* --- Scale down below 48em / 768px --- */
+/* Below the body size the scale runs out, so h5 is a quarter step (1.128) and h6 stays at 1rem. */
+@media (max-width: 47.9375em) {
+	h1 { font-size: 2.618rem; line-height: 1.236; letter-spacing: -0.05em; }
+	h2 { font-size: 2.058rem; line-height: 1.300; letter-spacing: -0.03em; }
+	h3 { font-size: 1.618rem; line-height: 1.382; letter-spacing: -0.02em; }
+	h4 { font-size: 1.272rem; line-height: 1.486; letter-spacing: -0.01em; }
+	h5 { font-size: 1.128rem; line-height: 1.548; letter-spacing: 0em; }
+	h6 { font-size: 1.000rem; line-height: 1.618; letter-spacing: 0.01em; }
 }
 
+/* normalize.css v8 sets b and strong to "bolder", which does nothing on text that
+   is already at the weight of its parent (a 600 or 900 element), and shows no
+   bold on the 300 weight body text. Setting it outright keeps normalize.css
+   untouched. */
+b, strong {
+	font-weight: 700; }
+
+/* normalize.css v8 no longer clears the browser's 40px figure margin. */
+figure {
+	margin: 0; }
+
 p {
-	margin-top: 1rem;
-	margin-bottom:1rem; }
+	margin-top: 1.4rem;
+	margin-bottom: 1.4rem; }
 
 
 /* Links
@@ -355,11 +392,11 @@ ul ul,
 ul ol,
 ol ol,
 ol ul {
-	margin: 1.5rem 0 1.5rem 3rem;
+	margin: 1.4rem 0 1.4rem 2.8rem;
 	font-size: 90%; }
 
 li {
-	margin-bottom: 1rem; }
+	margin-bottom: 0.7rem; }
 
 
 /* Code
@@ -384,8 +421,8 @@ pre > code {
 table {
 	border-collapse: collapse;
 	width: 100%;
-	margin-top: .5em; }
-	@media screen and (max-width: 640px) {
+	margin-top: 0.7rem; }
+	@media screen and (max-width: 40em) {
 		table {
 			width: 100%;
 			overflow-x: auto;
@@ -416,7 +453,7 @@ tr:nth-child(even) {}
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 blockquote {
 	border-left: 10px solid;
-	margin: 1.5em 10px;
+	margin: 1.4rem 0.7rem;
 	padding: 0.5em 10px;
 	quotes: "\201C" "\201D" "\2018" "\2019";
 	display: table;
@@ -457,7 +494,6 @@ blockquote cite:before {
 	content: attr(rel);
 	left: 50%;
     -webkit-transform: translate(-50%);
-        -ms-transform: translate(-50%);
             transform: translate(-50%);
 	padding: 5px 15px;
 	position: absolute;
@@ -489,7 +525,7 @@ blockquote cite:before {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 button,
 .button {
-	margin-bottom: 1rem; }
+	margin-bottom: 1.4rem; }
 
 button i, a i {
 	margin-right: 0.5rem;
@@ -499,7 +535,7 @@ input,
 textarea,
 select,
 fieldset {
-	margin-bottom: 1.5rem; }
+	margin-bottom: 1.4rem; }
 
 pre,
 blockquote,
@@ -510,7 +546,7 @@ table,
 ul,
 ol,
 form {
-	margin-bottom: 2.5rem; }
+	margin-bottom: 2.8rem; }
 
 /* Utilities
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -552,7 +588,6 @@ form {
 	top: 50%;
 	left: 50%;
 	-webkit-transform: translateY(-50%) translateX(-50%);
-			-ms-transform: translateY(-50%) translateX(-50%);
 					transform: translateY(-50%) translateX(-50%); }
 
 /* Type */
@@ -591,10 +626,34 @@ form {
 .u-no-margin {
 	margin: 0; }
 
+/* Vertical margin for spacing sections, e.g. <div class="container u-margin-4">.
+   The steps are multiples of the 0.7 grid gutter (1 = 0.7rem, 2 = 1.4rem and
+   so on), so the spacing stays in proportion with the grid. Top and bottom
+   only, so a .container keeps its auto side margins. */
+.u-margin-1 { margin-top: 0.7rem; margin-bottom: 0.7rem; }
+.u-margin-2 { margin-top: 1.4rem; margin-bottom: 1.4rem; }
+.u-margin-3 { margin-top: 2.1rem; margin-bottom: 2.1rem; }
+.u-margin-4 { margin-top: 2.8rem; margin-bottom: 2.8rem; }
+.u-margin-5 { margin-top: 3.5rem; margin-bottom: 3.5rem; }
+.u-margin-6 { margin-top: 4.2rem; margin-bottom: 4.2rem; }
+
+/* Theme toggle
+––––––––––––––––––––––––––––––––––––––––––––––––––
+An icon only button, see the light / dark section of js/application.js.
+Colours come from the button rules in colors.css. */
+.theme-toggle {
+	padding: 0 0.9rem;
+	font-size: 1rem;
+	letter-spacing: 0; }
+
+.theme-toggle i {
+	margin-right: 0; }
+
+
 /* Misc
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 hr {
-	margin-top: 3rem;
-	margin-bottom: 3rem;
+	margin-top: 1.4rem;
+	margin-bottom: 1.4rem;
 	border-width: 0;
 	border-top: 1px solid; }

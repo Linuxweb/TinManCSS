@@ -6,6 +6,11 @@
 # `httpd.conf`), you should add this logic there.
 #
 # https://httpd.apache.org/docs/current/howto/htaccess.html.
+#
+# Before going live: once the site has a working SSL certificate, uncomment
+# the HTTPS redirect (Forcing `https://`) and the HTTP Strict Transport
+# Security header, and uncomment the ErrorDocument lines you use. Leave them
+# commented on a local or staging copy.
 
 # ######################################################################
 # # PHP Configuration Overides                                         #
@@ -90,7 +95,13 @@
 # Customize what Apache returns to the client in case of an error.
 # https://httpd.apache.org/docs/current/mod/core.html#errordocument
 
+# These paths assume the site sits at the web root. Uncomment the lines you use.
+# ErrorDocument 400 /400.html
+# ErrorDocument 401 /401.html
+# ErrorDocument 403 /403.html
 # ErrorDocument 404 /404.html
+# ErrorDocument 500 /500.html
+# ErrorDocument 503 /503.html
 
 # ----------------------------------------------------------------------
 # | Error prevention                                                   |
@@ -109,37 +120,6 @@ Options -MultiViews
 # ######################################################################
 # # INTERNET EXPLORER                                                  #
 # ######################################################################
-
-# ----------------------------------------------------------------------
-# | Document modes                                                     |
-# ----------------------------------------------------------------------
-
-# Force Internet Explorer 8/9/10 to render pages in the highest mode
-# available in the various cases when it may not.
-#
-# https://hsivonen.fi/doctype/#ie8
-#
-# (!) Starting with Internet Explorer 11, document modes are deprecated.
-# If your business still relies on older web apps and services that were
-# designed for older versions of Internet Explorer, you might want to
-# consider enabling `Enterprise Mode` throughout your company.
-#
-# https://msdn.microsoft.com/en-us/library/ie/bg182625.aspx#docmode
-# http://blogs.msdn.com/b/ie/archive/2014/04/02/stay-up-to-date-with-enterprise-mode-for-internet-explorer-11.aspx
-
-<IfModule mod_headers.c>
-
-    Header set X-UA-Compatible "IE=edge"
-
-    # `mod_headers` cannot match based on the content-type, however,
-    # the `X-UA-Compatible` response header should be send only for
-    # HTML documents and not for the other resources.
-
-    <FilesMatch "\.(appcache|atom|bbaw|bmp|crx|css|cur|eot|f4[abpv]|flv|geojson|gif|htc|ico|jpe?g|js|json(ld)?|m4[av]|manifest|map|mp4|oex|og[agv]|opus|otf|pdf|png|rdf|rss|safariextz|svgz?|swf|topojson|tt[cf]|txt|vcard|vcf|vtt|webapp|web[mp]|webmanifest|woff2?|xloc|xml|xpi)$">
-        Header unset X-UA-Compatible
-    </FilesMatch>
-
-</IfModule>
 
 # ----------------------------------------------------------------------
 # | Iframes cookies                                                    |
@@ -201,6 +181,7 @@ Options -MultiViews
     AddType audio/ogg                                   oga ogg opus
     AddType image/bmp                                   bmp
     AddType image/svg+xml                               svg svgz
+    AddType image/avif                                  avif
     AddType image/webp                                  webp
     AddType video/mp4                                   f4v f4p m4v mp4
     AddType video/ogg                                   ogv
@@ -618,6 +599,28 @@ AddDefaultCharset utf-8
 </IfModule>
 
 # ----------------------------------------------------------------------
+# | Referrer policy                                                    |
+# ----------------------------------------------------------------------
+
+# Send the full URL to the same site, but only the origin to other sites.
+# This is the default in current browsers, set here so it does not depend on them.
+
+<IfModule mod_headers.c>
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Permissions policy                                                 |
+# ----------------------------------------------------------------------
+
+# Switch off browser features the site does not use. Adjust the list, then
+# uncomment.
+
+# <IfModule mod_headers.c>
+#     Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+# </IfModule>
+
+# ----------------------------------------------------------------------
 # | Reflected Cross-Site Scripting (XSS) attacks                       |
 # ----------------------------------------------------------------------
 
@@ -862,8 +865,12 @@ FileETag None
     ExpiresDefault                                      "access plus 1 month"
 
   # CSS
+  # One week, not a year: the filename cache busting rule further down is
+  # commented out and the pages link css/ and js/ files without a version, so a
+  # long lifetime would leave returning visitors on an old stylesheet after an
+  # update. Raise it only if you enable cache busting.
 
-    ExpiresByType text/css                              "access plus 1 year"
+    ExpiresByType text/css                              "access plus 1 week"
 
 
   # Data interchange
@@ -892,9 +899,9 @@ FileETag None
 
   # JavaScript
 
-    ExpiresByType application/javascript                "access plus 1 year"
-    ExpiresByType application/x-javascript              "access plus 1 year"
-    ExpiresByType text/javascript                       "access plus 1 year"
+    ExpiresByType application/javascript                "access plus 1 week"
+    ExpiresByType application/x-javascript              "access plus 1 week"
+    ExpiresByType text/javascript                       "access plus 1 week"
 
 
   # Manifest files
@@ -912,6 +919,7 @@ FileETag None
     ExpiresByType image/jpeg                            "access plus 1 month"
     ExpiresByType image/png                             "access plus 1 month"
     ExpiresByType image/svg+xml                         "access plus 1 month"
+    ExpiresByType image/avif                            "access plus 1 month"
     ExpiresByType image/webp                            "access plus 1 month"
     ExpiresByType video/mp4                             "access plus 1 month"
     ExpiresByType video/ogg                             "access plus 1 month"
