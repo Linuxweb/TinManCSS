@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="images/logo-dark.svg">
+    <img src="images/logo-light.svg" alt="tinman.css, the css grid with heart" height="120">
+  </picture>
+</p>
+
 # [TinManCSS](https://bit.ly/3N9XwxR)
 
 [![GitHub issues](https://img.shields.io/github/issues/Linuxweb/TinManCSS?style=for-the-badge)](https://github.com/Linuxweb/TinManCSS/issues)
@@ -45,7 +52,9 @@ TinManCSS/
 │   ├── icons/          icons for forms and notifications
 │   ├── 403.jpg, 404.jpg, 500.jpg  (error page photos)
 │   ├── favicon.svg, favicon.ico and PNG icons
-│   ├── logo.svg
+│   ├── logo.svg        inline logo, takes the text colour
+│   ├── logo-light.svg  static copies for the README
+│   ├── logo-dark.svg
 │   └── site.webmanifest
 └── js/
     ├── application.js
