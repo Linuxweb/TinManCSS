@@ -50,7 +50,7 @@ TinManCSS/
 │   └── layout.min.css
 ├── images/
 │   ├── icons/          icons for forms and notifications
-│   ├── 403.jpg, 404.jpg, 500.jpg  (error page photos)
+│   ├── 403.jpg, 404.jpg, 500.jpg, 503.jpg  (error page photos)
 │   ├── favicon.svg, favicon.ico and PNG icons
 │   ├── logo.svg        inline logo, takes the text colour
 │   ├── logo-light.svg  static copies for the README
