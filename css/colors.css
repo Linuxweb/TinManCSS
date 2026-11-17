@@ -217,28 +217,28 @@ hr {
 .orangedark							{ color: #c45024; }
 .reddark								{ color: #bf5151; }
 .yellowdark							{ color: #91701a; }
-.pinkdark							{ color: #c94181; }
+.bg_pinkdark						{ color: #c94181; }
 
 /* Every text colour changes on hover, a step darker in the same hue */
 a:hover.white						{ color: #e6e6e6; }
 a:hover.grey						{ color: #CCCCCC; }
 a:hover.grey2						{ color: #d9d9d9; }
-a:hover.greydark						{ color: #2E3233; }
-a:hover.greydark2						{ color: #2b2f30; }
+a:hover.greydark				{ color: #2E3233; }
+a:hover.greydark2				{ color: #2b2f30; }
 a:hover.green						{ color: #61A87E; }
 a:hover.blue						{ color: #66B6CA; }
-a:hover.violet						{ color: #AC78B5; }
-a:hover.orange						{ color: #D46B43; }
-a:hover.red						{ color: #C75F5F; }
+a:hover.violet					{ color: #AC78B5; }
+a:hover.orange					{ color: #D46B43; }
+a:hover.red							{ color: #C75F5F; }
 a:hover.pink						{ color: #d796b4; }
-a:hover.yellow						{ color: #D4AB3F; }
-a:hover.greendark						{ color: #336949; }
-a:hover.bluedark						{ color: #1f6677; }
-a:hover.violetdark						{ color: #864f90; }
-a:hover.orangedark						{ color: #a6441f; }
-a:hover.reddark						{ color: #ad3f3f; }
-a:hover.pinkdark						{ color: #b3336f; }
-a:hover.yellowdark						{ color: #725814; }
+a:hover.yellow					{ color: #D4AB3F; }
+a:hover.greendark				{ color: #336949; }
+a:hover.bluedark				{ color: #1f6677; }
+a:hover.violetdark			{ color: #864f90; }
+a:hover.orangedark			{ color: #a6441f; }
+a:hover.reddark					{ color: #ad3f3f; }
+a:hover.pinkdark				{ color: #b3336f; }
+a:hover.yellowdark			{ color: #725814; }
 
 /* Standard Background Colours*/
 .bg_white								{ background-color: #ffffff; }
@@ -259,7 +259,7 @@ a:hover.yellowdark						{ color: #725814; }
 .bg_orangedark					{ background-color: #c45024; }
 .bg_reddark							{ background-color: #bf5151; }
 .bg_yellowdark					{ background-color: #91701a; }
-.bg_pinkdark					{ background-color: #c94181; }
+.bg_pinkdark						{ background-color: #c94181; }
 
 .bg_gradient						{
 													background: #74cee4; /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */ /* IE10+ */

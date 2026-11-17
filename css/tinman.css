@@ -36,8 +36,6 @@
 .row {
 	margin-left: -0.7em;
 	margin-right: -0.7em;
-	margin-top: calc(var(--row-gap) * -1);
-	--row-gap: 1.4em; /* vertical gap between wrapped columns, matches the 1.4em horizontal gap. To change it for one row, set --row-gap on that row in layout.css */
 }
 
 .container:after,
@@ -79,50 +77,50 @@
 .ten.column,
 .ten.columns						{ width: calc(83.33333% - 1.4em); }
 .eleven.column,
-.eleven.columns						{ width: calc(91.66667% - 1.4em); }
+.eleven.columns					{ width: calc(91.66667% - 1.4em); }
 .twelve.column,
-.twelve.columns						{ width: calc(100% - 1.4em); }
+.twelve.columns					{ width: calc(100% - 1.4em); }
 .fifth.column,
 .fifth.columns						{ width: calc(20% - 1.4em); }
 
 /* Standard offsets by a factor of the column width */
 .offset-by-one.column,
-.offset-by-one.columns				{ margin-left: calc(8.33333% + 0.7em); }
+.offset-by-one.columns			{ margin-left: calc(8.33333% + 0.7em); }
 .offset-by-two.column,
-.offset-by-two.columns				{ margin-left: calc(16.66667% + 0.7em); }
+.offset-by-two.columns			{ margin-left: calc(16.66667% + 0.7em); }
 .offset-by-three.column,
-.offset-by-three.columns			{ margin-left: calc(25% + 0.7em); }
+.offset-by-three.columns		{ margin-left: calc(25% + 0.7em); }
 .offset-by-four.column,
-.offset-by-four.columns				{ margin-left: calc(33.33333% + 0.7em); }
+.offset-by-four.columns			{ margin-left: calc(33.33333% + 0.7em); }
 .offset-by-five.column,
-.offset-by-five.columns				{ margin-left: calc(41.66667% + 0.7em); }
+.offset-by-five.columns			{ margin-left: calc(41.66667% + 0.7em); }
 .offset-by-six.column,
-.offset-by-six.columns				{ margin-left: calc(50% + 0.7em); }
+.offset-by-six.columns			{ margin-left: calc(50% + 0.7em); }
 .offset-by-seven.column,
-.offset-by-seven.columns			{ margin-left: calc(58.33333% + 0.7em); }
+.offset-by-seven.columns		{ margin-left: calc(58.33333% + 0.7em); }
 .offset-by-eight.column,
-.offset-by-eight.columns			{ margin-left: calc(66.66667% + 0.7em); }
+.offset-by-eight.columns		{ margin-left: calc(66.66667% + 0.7em); }
 .offset-by-nine.column,
-.offset-by-nine.columns				{ margin-left: calc(75% + 0.7em); }
+.offset-by-nine.columns			{ margin-left: calc(75% + 0.7em); }
 .offset-by-ten.column,
-.offset-by-ten.columns				{ margin-left: calc(83.33333% + 0.7em); }
+.offset-by-ten.columns			{ margin-left: calc(83.33333% + 0.7em); }
 .offset-by-eleven.column,
-.offset-by-eleven.columns			{ margin-left: calc(91.66667% + 0.7em); }
+.offset-by-eleven.columns		{ margin-left: calc(91.66667% + 0.7em); }
 
 /* Center odd remaining columns accross the row width */
 .offset-for-one.column,
-.offset-for-one.columns				{ margin-left: calc(45.83334% + 0.7em); }
+.offset-for-one.columns			{ margin-left: calc(45.83334% + 0.7em); }
 .offset-for-three.column,
-.offset-for-three.columns			{ margin-left: calc(37.5% + 0.7em); }
+.offset-for-three.columns		{ margin-left: calc(37.5% + 0.7em); }
 .offset-for-five.column,
-.offset-for-five.columns			{ margin-left: calc(29.16666% + 0.7em); }
+.offset-for-five.columns		{ margin-left: calc(29.16666% + 0.7em); }
 .offset-for-seven.column,
-.offset-for-seven.columns			{ margin-left: calc(20.833333% + 0.7em); }
+.offset-for-seven.columns		{ margin-left: calc(20.833333% + 0.7em); }
 .offset-for-nine.column,
-.offset-for-nine.columns			{ margin-left: calc(12.5% + 0.7em); }
+.offset-for-nine.columns		{ margin-left: calc(12.5% + 0.7em); }
 .offset-for-eleven.column,
-.offset-for-eleven.columns			{ margin-left: calc(4.166665% + 0.7em); }
-.offset-for-fifth.columns			{ margin-left: calc(40% + 0.7em); }
+.offset-for-eleven.columns		{ margin-left: calc(4.166665% + 0.7em); }
+.offset-for-fifth.columns		{ margin-left: calc(40% + 0.7em); }
 
 /* Below 48em every column is full width and offsets are ignored.
    .container .columns is as specific as .six.columns and .offset-by-two.columns
@@ -597,6 +595,9 @@ form {
 .u-text-right {
 	text-align: right !important; }
 
+.u-text-left {
+	text-align: left !important; }
+
 .u-text-hide {
 	font: 0/0 a;
 	color: transparent;
@@ -623,8 +624,9 @@ form {
 	width: 100%;
 	height: auto; }
 
-.u-no-margin {
-	margin: 0; }
+.u-no-margin { margin: 0; }
+
+.u-row-gap { --row-gap: 1.4rem; }
 
 /* Vertical margin for spacing sections, e.g. <div class="container u-margin-4">.
    The steps are multiples of the 0.7 grid gutter (1 = 0.7rem, 2 = 1.4rem and

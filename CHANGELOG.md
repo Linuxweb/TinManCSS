@@ -6,7 +6,7 @@ A rewrite. Class names are unchanged, so existing markup keeps working, but spac
 
 ### Changed
 - **Desktop first.** The grid and heading scale are the base styles, and one `max-width: 47.9375em` query stacks columns below 48em. The `layout.css` stubs are now `max-width: 60em`, `max-width: 30em` and a final `min-width: 90em`.
-- **Vertical rhythm.** Columns get an even 1.4em gap between wrapped lines (`--row-gap`), matching the gap between neighbours. Block margins are on a 0.7 scale.
+- **Vertical rhythm.** Rows have no vertical gap by default. Add `u-row-gap` only to a row whose columns wrap or stack and need spacing, such as a gallery or grid of images, to get an even 1.4rem gap between lines of columns (`--row-gap`, in rem so it matches the row and every column whatever their font size). The gap also falls above the first line of columns. Block margins are on a 0.7 scale.
 - **Type.** Golden ratio scale for headings, with line height set as the font size plus 0.618rem. Body `line-height` is unitless 1.618.
 - **Container** is 90% wide, was 80%.
 - **The `*dark` palette colours** are now properly dark, same hue, so they pass AA as text. They were almost identical to their base colours.

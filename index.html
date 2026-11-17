@@ -144,7 +144,7 @@
 		</div>
 	</div>
 
-	<div class="row">
+	<div class="row u-row-gap">
 		<div class="twelve columns">
 			<h2>Lists</h2>
 		</div>
@@ -182,7 +182,7 @@
 		</blockquote>
 	</div>
 
-	<div class="row">
+	<div class="row u-row-gap">
 		<div class="twelve columns">
 			<h2>Text and Code</h2>
 			<p>Body text can be <strong>bold</strong>, <em>italic</em> or <small>small</small>, and <code>inline code</code> sits in a line of text.</p>
@@ -209,7 +209,7 @@
 		</div>
 	</div>
 
-	<div class="row">
+	<div class="row u-row-gap">
 		<div class="twelve columns">
 			<h2>Notification Boxes</h2>
 		</div>
@@ -271,7 +271,7 @@
 		</form>
 	</div>
 
-	<div class="row">
+	<div class="row u-row-gap">
 		<div class="twelve columns">
 			<h2>Colours</h2>
 			<h4>Theme tokens</h4>
@@ -289,7 +289,7 @@
 		<div class="three columns demo-box" style="background: var(--background); color: var(--body)">--background</div>
 	</div>
 
-	<div class="row">
+	<div class="row u-row-gap">
 		<div class="twelve columns">
 			<h4>Palette backgrounds</h4>
 			<p>Fixed colours, the same in light and dark. The <code>bg_*</code> classes set a background, and the <code>button-*</code> classes in Buttons above use the same colours.</p>
@@ -315,7 +315,7 @@
 		<div class="two columns demo-box bg_pinkdark" style="color: #fff">bg_pinkdark</div>
 	</div>
 
-	<div class="row">
+	<div class="row u-row-gap">
 		<div class="twelve columns">
 			<h4>Palette text</h4>
 			<p>The text classes. The three light ones are for use on dark backgrounds, so they sit on a dark strip here. The <code>*dark</code> colours are dark enough to read as text on white (4.5:1), and every text colour is a step darker when you hover a link that uses it.</p>
@@ -348,7 +348,7 @@
 		</div>
 	</div>
 
-	<div class="row">
+	<div class="row u-row-gap">
 		<div class="twelve columns">
 			<h2>Spacing</h2>
 			<p><code>u-margin-1</code> to <code>u-margin-6</code> add top and bottom margin in steps of 0.7rem, for example on a <code>container</code> that holds a section. Neighbouring margins collapse to the larger one.</p>
@@ -359,7 +359,7 @@
 			<div class="demo-box u-margin-5">u-margin-5 (3.5rem above and below)</div>
 			<div class="demo-box u-margin-6">u-margin-6 (4.2rem above and below)</div>
 			<h4>Row gap</h4>
-			<p>Wrapped columns are 1.4em apart by default, the same as the gap between neighbours. To change it for one row, set <code>--row-gap</code> on that row.</p>
+			<p>Rows have no vertical gap by default. Add <code>u-row-gap</code> only to a row whose columns wrap or stack and need spacing, such as a gallery or grid of images, to put 1.4rem between the lines of columns, the same as the gap between neighbours. To change it for one row, set <code>--row-gap</code> in rem on that row.</p>
 		</div>
 		<div class="three columns demo-box">three columns</div>
 		<div class="three columns demo-box">three columns</div>
@@ -371,18 +371,18 @@
 		<div class="three columns demo-box">three columns</div>
 	</div>
 
-	<div class="row" style="--row-gap: 0.7em">
+	<div class="row u-row-gap" style="--row-gap: 0.7rem">
 		<div class="twelve columns">
-			<p>The same row with <code>--row-gap: 0.7em</code>.</p>
+			<p>The same row with <code>--row-gap: 0.7rem</code>.</p>
 		</div>
-		<div class="three columns demo-box">three columns, 0.7em gap</div>
-		<div class="three columns demo-box">three columns, 0.7em gap</div>
-		<div class="three columns demo-box">three columns, 0.7em gap</div>
-		<div class="three columns demo-box">three columns, 0.7em gap</div>
-		<div class="three columns demo-box">three columns, 0.7em gap</div>
-		<div class="three columns demo-box">three columns, 0.7em gap</div>
-		<div class="three columns demo-box">three columns, 0.7em gap</div>
-		<div class="three columns demo-box">three columns, 0.7em gap</div>
+		<div class="three columns demo-box">three columns, 0.7rem gap</div>
+		<div class="three columns demo-box">three columns, 0.7rem gap</div>
+		<div class="three columns demo-box">three columns, 0.7rem gap</div>
+		<div class="three columns demo-box">three columns, 0.7rem gap</div>
+		<div class="three columns demo-box">three columns, 0.7rem gap</div>
+		<div class="three columns demo-box">three columns, 0.7rem gap</div>
+		<div class="three columns demo-box">three columns, 0.7rem gap</div>
+		<div class="three columns demo-box">three columns, 0.7rem gap</div>
 	</div>
 
 	<div class="row">
@@ -412,6 +412,7 @@
 					<tr><td><code>u-invisible / u-visible</code></td><td>Hides or shows an element but keeps its space.</td></tr>
 					<tr><td><code>u-img-responsive</code></td><td>Image fills its column and keeps its ratio.</td></tr>
 					<tr><td><code>u-no-margin</code></td><td>Margin 0.</td></tr>
+					<tr><td><code>u-row-gap</code></td><td>On a <code>.row</code> whose columns wrap or stack (gallery, image grid): 1.4rem gap between lines of columns.</td></tr>
 					<tr><td><code>u-margin-1 to u-margin-6</code></td><td>Top and bottom margin in steps of 0.7rem.</td></tr>
 				</tbody>
 			</table>
@@ -430,7 +431,7 @@
 		</div>
 	</div>
 
-	<div class="row">
+	<div class="row u-row-gap">
 		<div class="twelve columns">
 			<h2>Grid</h2>
 		</div>
@@ -518,7 +519,7 @@
 	</div>
 </div>
 <div class="container">
-	<div class="row">
+	<div class="row u-row-gap">
 		<div class="twelve columns">
 			<h3>Offsets & Nesting</h3>
 		</div>
@@ -526,7 +527,7 @@
 		<div class="four columns demo-box">four columns</div>
 		<div class="three columns offset-by-nine demo-box">three columns offset-by-nine</div>
 	</div>
-	<div class="row">
+	<div class="row u-row-gap">
 		<div class="twelve columns">
 			<h4>Centered</h4>
 		</div>
@@ -534,7 +535,7 @@
 		<div class="five columns offset-for-five demo-box">five columns centered</div>
 		<div class="eight columns offset-by-two demo-box">eight columns centered</div>
 	</div>
-	<div class="row">
+	<div class="row u-row-gap">
 		<div class="twelve columns">
 			<h4>Nested rows</h4>
 		</div>
